@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Null;
+import javax.validation.constraints.Positive;
+
 /**
  * Created by jt on 2019-04-20.
  */
@@ -16,8 +20,15 @@ import java.util.UUID;
 @Builder
 public class BeerDto {
 
+    @Null
     private UUID id;
+
+    @NotBlank
     private String beerName;
+
+    @NotBlank
     private String beerStyle;
+
+    @Positive
     private Long upc;
 }
